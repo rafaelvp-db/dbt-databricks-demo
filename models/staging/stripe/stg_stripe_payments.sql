@@ -7,9 +7,9 @@ with source_payments as (
 renamed_payments as (
 
     select
-        id as payment_id,
-        orderid as order_id,
-        paymentmethod as payment_method,
+        ID as payment_id,
+        ORDERID as order_id,
+        PAYMENTMETHOD as payment_method,
 
         -- amount is stored in cents, convert it to dollars
         amount / 100 as amount,

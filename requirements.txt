@@ -1,0 +1,5 @@
+dbt-spark
+dbt-spark[PyHive]
+pytest-dbt-core
+pyspark
+pytest
