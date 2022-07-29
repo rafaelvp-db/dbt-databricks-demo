@@ -31,10 +31,10 @@ wget http://dbt-tutorial-public.s3-us-west-2.amazonaws.com/stripe_payments.csv -
 
 # COMMAND ----------
 
-df_customers = spark.read.csv("/tmp/jaffle/customers.csv")
-df_orders = spark.read.csv("/tmp/jaffle/orders.csv")
-df_payments = spark.read.csv("/tmp/jaffle/payments.csv")
+df_customers = spark.read.option("header", True).option("inferSchema", True).csv("/tmp/jaffle/customers.csv")
+df_orders = spark.read.option("header", True).option("inferSchema", True).csv("/tmp/jaffle/orders.csv")
+df_payments = spark.read.option("header", True).option("inferSchema", True).csv("/tmp/jaffle/payments.csv")
 
 df_customers.write.saveAsTable(name = "jaffle_shop.customers")
 df_orders.write.saveAsTable(name = "jaffle_shop.orders")
-df_customers.write.saveAsTable(name = "stripe.payments")
+df_payments.write.saveAsTable(name = "stripe.payments")
